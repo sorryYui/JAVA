@@ -1,16 +1,13 @@
 import java.io.*;
-public class Test
+public class People
 {
-    public static void main(String args[])
+    public int m;
+    public People()
     {
-        People p = new People();
-        Student s = new Student();
-        People sp = new Student();
-        p.eat();
-        s.eat();
-        sp.eat();
-        System.out.println(p.m);
-        System.out.println(s.m);
-        System.out.println(sp.m);
+        m = 0;
+    }
+    public void eat()
+    {
+        System.out.println("Eat this!");
     }
 }
