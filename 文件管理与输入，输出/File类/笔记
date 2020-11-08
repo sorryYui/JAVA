@@ -1,0 +1,9 @@
+File hasn't exists.
+F:\javatest\javatest.txt
+javatest.txt
+F:\javatest
+newFile isn't directory.
+The length of the File is:0
+abchas created.
+False
+//当文件的父路径不存在时，文件将创建失败。
