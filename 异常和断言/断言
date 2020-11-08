@@ -1,0 +1,4 @@
+断言的语法为
+assert 逻辑表达式 [:细节信息]
+即：assert关键字后面跟一个逻辑表达式，逻辑表达式的值为true时，assert不反应。如果为false时，assert抛出一个AssertionError异常，并终止运行。
+[]提供细节信息，可以使用getCause()方法得知。
