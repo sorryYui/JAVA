@@ -1,0 +1,5 @@
+The pos is 8
+10
+20
+30
+//RandomAccessFile可以在文件指定的位置进行读写。
