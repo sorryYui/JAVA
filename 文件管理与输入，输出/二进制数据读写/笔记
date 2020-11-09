@@ -1,0 +1,9 @@
+4bytes have been written.
+12bytes have been written.
+13bytes has been written.
+28bytes has benn written.
+10
+3.14
+true
+你是弟弟!
+//InputStream和OutputStream会顺序读取文件的内容。
