@@ -1,0 +1,5 @@
+public interface Generic<T>
+{
+  public T method(); ------ 形式1
+  public XXX method(T obj); ------形式2
+}
