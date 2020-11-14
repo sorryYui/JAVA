@@ -2,4 +2,6 @@
   功能：查找位置为index的元素。
   实现原理：若index < size / 2，则从前往后找，否则从后往前找。
 2.add(E e)和add(int index, E e);
-  
+  add(E,e) : 向Linkedlink的最后位置添加一个元素e
+  add(int index, E e) : 向指定位置插入元素E e。
+3.
