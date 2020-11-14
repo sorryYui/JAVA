@@ -1,0 +1,1 @@
+继承并实现了Iterator类的方法才可以使用for each格式语句。
