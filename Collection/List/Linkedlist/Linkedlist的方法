@@ -4,4 +4,7 @@
 2.add(E e)和add(int index, E e);
   add(E,e) : 向Linkedlink的最后位置添加一个元素e
   add(int index, E e) : 向指定位置插入元素E e。
-3.
+3.remove(Object o)和remove(int index);
+  remove(Object o):删除该链表的一个对象o
+  remove(int index):删除位置为index的元素。
+
