@@ -1,0 +1,6 @@
+1.add(Object o)
+  HashSet的add方法时通过HashMap的put方法实现的,HashSet添加的元素是存放在HashMap的key位置上，而value取了默认常量PRESENT，是一个空对象。
+2.remove(Object o)
+  HashSet的remove方法通过HashMap的remove方法来实现.
+3.遍历
+  HashSet作为集合，有多种遍历方法，如普通for循环，增强for循环，迭代器。
