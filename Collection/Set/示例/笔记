@@ -1,0 +1,7 @@
+HHHH 1
+HH 2
+HHH 3
+H 4
+/*
+1.使用HashSet的类必须重写hashCode()方法和equals()方法。
+2.压入HashSet中的元素输出时不是按照压入的顺序输出。
