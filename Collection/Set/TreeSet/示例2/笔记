@@ -1,0 +1,1 @@
+自定义类需要实现Compareble接口的compareTo()方法。
