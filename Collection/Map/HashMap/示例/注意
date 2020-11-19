@@ -1,0 +1,1 @@
+必须重写equals()和hashCode()方法。
