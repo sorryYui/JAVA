@@ -13,10 +13,10 @@ public class Producer extends Person implements Runnable
             {
                 Thread.sleep(1000);
                 String date = "date " + count.incrementAndGet();
-                if (count.get() > 40)
-                    break;
                 System.out.println("producing " + date);
                 while(!super.push(date));
+                if (count.get() >= 40)
+                    break;
             }
         }catch(InterruptedException e)
         {
