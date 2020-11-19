@@ -1,0 +1,18 @@
+1.void clear()
+  删除所有键值对。
+2.int size()
+  返回键值对数目。
+3.boolean isEmtpy()
+  判断集合中是否含有键值对。
+4.boolean contiansKey(Object key)
+  判断集合中是否含有该键。
+5.boolean contiansValue(Object value)
+  判断集合中包含该值的键是否大于0。
+6.Object firstKey()
+  返回键最小的键。
+7.Object lastKey()
+  返回键最大的键。
+8.Object ceilingKey(Object key)
+  返回大于等于key的键，不存在返回null;
+9.Object higherKey(Object key)
+  返回严格大于指定键的最小键。
