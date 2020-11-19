@@ -10,14 +10,17 @@ public class Consumer extends Person implements Runnable
     {
         try
         {
-           while (true)
-           {
-               Thread.sleep(1000);
-               String date = super.pop();
-               if (count.get() > 40)
-                   break;
-               System.out.println("Consuming " + date);
-           }
+            while (true)
+            {
+                Thread.sleep(1000);
+                if (count.get() >= 40)
+                    break;
+                String date;
+                while ((date = super.pop()) == null);
+                count.incrementAndGet();
+                //System.out.println(count.get());
+                System.out.println("Consuming " + date);
+            }
         }catch(InterruptedException e)
         {
             e.printStackTrace();
