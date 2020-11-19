@@ -1,0 +1,21 @@
+1.主干
+  HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。
+  transient Entry<K,V>[] table = (Entry<K,V>[]) EMPTY_TABLE;
+2.静态内部类Entry
+  static class Entry<K,V> implements Map.Entry<K,V>
+  {
+    final K key;
+    V value;
+    Entry<K,V> next;
+    int hash;
+    Entry(int h,K k,V v,Entry<K,V> n)
+    {
+      hash = h;
+      key = k;
+      value = v;
+      next = n
+    }
+  }
+HashMap由数组+链表组成的，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的，如果定位到的数组位置不含链表（当前entry的next指向null）,那么查找，添加等操作很快，仅需一次寻址即可；如果定位到的数组包含链表，对于添加操作，其时间复杂度为O(n)，首先遍历链表，存在即覆盖，否则新增；
+对于查找操作来讲，仍需遍历链表，然后通过key对象的equals方法逐一比对查找。所以，性能考虑，HashMap中的链表出现越少，性能才会越好。
+  
