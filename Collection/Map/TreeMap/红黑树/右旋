@@ -1,0 +1,20 @@
+p.right = G,G.parent = P;
+private int rotateRight(Entry<K,V> p)
+{
+  if (p != null)
+  {
+    Entry<K,V> l = p.left;
+    p.left = l.right;
+    if (l.right != null)
+      l.right.parent = p;
+    l.parent = p.parent;
+    if (p.parent == null)
+      root = l;
+    else if (p.parent.left == p)
+      p.parent.left = l;
+    else
+      p.parent.right = l;
+    l.right = p;
+    p.parent = l;
+  }
+}
