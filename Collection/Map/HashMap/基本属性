@@ -1,0 +1,9 @@
+1.transient int size;
+  实际储存的键值对。
+2.int thershold;
+  阈值，到达阈值后hashmap将扩容。阈值一般为总容量 * 负载因子。总容量初值为16,每次扩容一倍。
+3.final float loadFactor;
+  负载因子。
+transient int modCount;
+  HashMap被改变的次数，由于HashMap非线程安全，在对HashMap进行迭代时，如果期间其他线程的参与导致HashMap的结构发生变化了（比如put，remove等操作），
+  需要抛出异常ConcurrentModificationException
