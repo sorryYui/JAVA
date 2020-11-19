@@ -1,0 +1,11 @@
+1.final int hash(Object key)
+  对key的hashcode进一步进行计算以及二进制位的调整等来保证最终获取的存储位置尽量分布均匀。
+2.static int indexFor(int h,int length)
+  hash函数计算出的值，通过indexFor进一步处理来获取实际的存储位置。
+3.void addEntry(int hash,K key,V value,int bucketIndex)
+  当发生哈希冲突并且size大于阈值的时候，需要进行数组扩容。扩容时，需要新建一个长度为之前数组2倍的新的数组，然后将当前的Entry数组中的元素全部传输过去。
+  扩容后的新数组长度为之前的2倍，所以扩容相对来说是个耗资源的操作。
+4.void resize(int newCapacity)
+  扩建数组为之前旧数组的两倍，并重新计算每一个Entry(K,V)的indexFor和hash。
+5.void transfer(Entry[] newTable,boolean rehash);
+  重新计算每一个Entry<K,V>的hash和indexFor；
