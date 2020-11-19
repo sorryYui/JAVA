@@ -1,0 +1,22 @@
+1.private final Comparator<? super K> comparator;
+  TreeMap中的比较器
+2.private tranisent int size = 0;
+  TreeMap中的键值对数量。
+3.private tranisent int modCount = 0;
+  TreeMap中键值对被改变的次数。
+4.private static final boolean RED = false;
+  TreeMap中红色的节点。
+5.private static final boolean BLACK = true;
+  TreeMap中黑色的节点。
+6.private tranisent Entry<K,V> root = null;
+  TreeMap中的红黑节点，为内部类。
+private static Entry<K,V> 
+{
+  K key;
+  V value;
+  Entry<K,V> left = null;
+  Entry<K,V> right = null;
+  Entry<K,V> parent;
+  boolean color = BLACK;
+}
+  
