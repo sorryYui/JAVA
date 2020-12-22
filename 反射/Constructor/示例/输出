@@ -1,0 +1,12 @@
+---------
+public Person(java.lang.String,java.lang.String) public Person(java.lang.String) public Person() 
+---------
+private Person(int) protected Person(boolean) public Person(java.lang.String,java.lang.String) public Person(java.lang.String) public Person() 
+----------
+constructor = public Person()
+公有、无参构造方法执行了。
+Object:Person@4e50df2e
+
+----------
+public Person(java.lang.String)
+man
