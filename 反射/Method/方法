@@ -1,0 +1,15 @@
+1.批量的
+  1.public Method[] getMethods()------获取所有"公有方法"；（包含了父类的方法也包含Object类）。
+  2.public Method[] getDeclareMethods()------获取所有的成员方法，包括私有的(不包括继承的)。
+2.获取单个的
+  1.public Method getMethod(String name,Class<T>...parameterTypes)
+    参数： 
+      name: 方法名；
+      Class ... : 形参的Class类型对象
+   2.public Method getDeclareMethod(String name,Class<T>...parameterTypes)
+   调用方法：
+    Method---public Object invoke(Object o,Object...args)
+      参数说明:
+      o------要调用方法的对象
+      args------调用方式时所传递的实参
+ 
