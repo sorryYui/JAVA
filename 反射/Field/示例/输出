@@ -1,0 +1,12 @@
+---------
+public java.lang.String Person.name
+---------
+public java.lang.String Person.name
+protected int Person.age
+char Person.sex
+private java.lang.String Person.ip
+---------
+HHHH
+-------
+private java.lang.String Person.ip
+name:HHHH age:0 sex:  ip:192.168.128
