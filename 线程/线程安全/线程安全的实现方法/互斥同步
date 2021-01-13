@@ -1,0 +1,16 @@
+  互斥同步（Mutual Exclusion & Synchronization）是一种常见也是最主要的并发正确性保障手段。
+  同步是指多个线程并发访问共享数据时，保证共享数据在同一时刻只被一条线程使用。
+  互斥是指实现同步的一种手段，临界区（Critical Section）、互斥量（Mutex）和信号量（Semaphore）都是常见的互斥实现方式
+  在Java里，最基本的互斥同步手段就是synchronized关键字，这是一种块结构的同步语法。在Java代码里如果synchronized明确指定了对象参数，那就以这个对象的引用作为reference；如果没有明确指定
+那将根据synchronized修饰的方法类型（如实例方法或类方法），来决定是取代码所在的对象实例还是取类型对应的Class对象来作为线程要持有的锁。
+  使用sychronized时需要注意的两点：
+    被synchronized修饰的同步块对同一条线程来说是可重入的。
+    被synchronized修饰的同步块在持有锁的线程执行完毕并释放锁之前，会无条件地阻塞后面其他线程的进入。这意味着无法像处理某些数据库中的锁那样，强制已获取锁的线程释放锁；也无法强制正在等待
+  锁的线程中断等待或超时退出。
+    重入锁（ReentrantLock）是Lock接口最常见的一种实现，它与synchronized一样是可重入的。基本用法是，ReentrantLock与synchronized很相似，只是代码写法上稍有区别而已。
+    但是ReentrantLock与synchronized相比增加了一些高级特性，主要有以下三项：
+      等待可中断：是指当持有锁的线程长期不释放的时候，正在等待的线程可以选择放弃等待，改为处理其他事情。可中断特性对处理执行时间非常长的同步很有帮助。
+      公平锁：是指多个线程在等待同一个锁时，必须按照申请锁的时间顺序来依次获得锁；而非公平锁则不保证这一点，在锁被释放时，任何一个等待锁的线程都有机会获得锁。
+      synchronized是非公平锁，ReentrantLock在默认情况系也是非公平锁，但可以通过构造函数的参数设置成公平锁，不过一旦设置了公平锁，ReentrantLock性能急剧下降，会明显影响性能。
+      锁绑定多个条件：是指一个ReentrantLock对象可以同时绑定多个Condition对象。在synchronized中，锁对象的wait()跟它的notify()或者notifyAll()方法配合可以实现一个隐含条件，如果要和多于
+      一个的条件关联的时候，就不得不额外添加一个锁；而ReentrantLock则无须这样做，多次调用newCondition()方法即可。
