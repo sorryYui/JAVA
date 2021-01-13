@@ -14,3 +14,4 @@
       synchronized是非公平锁，ReentrantLock在默认情况系也是非公平锁，但可以通过构造函数的参数设置成公平锁，不过一旦设置了公平锁，ReentrantLock性能急剧下降，会明显影响性能。
       锁绑定多个条件：是指一个ReentrantLock对象可以同时绑定多个Condition对象。在synchronized中，锁对象的wait()跟它的notify()或者notifyAll()方法配合可以实现一个隐含条件，如果要和多于
       一个的条件关联的时候，就不得不额外添加一个锁；而ReentrantLock则无须这样做，多次调用newCondition()方法即可。
+    注意：Lock应该确保在finally块中释放锁，否则一旦受同步保护的代码块中抛出异常，则有可能永远不释放持有的锁。
