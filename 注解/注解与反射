@@ -1,0 +1,2 @@
+  注解通过反射获取。首先可以通过 Class 对象的 isAnnotationPresent() 方法判断它是否应用了某个注解。
+  
