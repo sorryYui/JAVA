@@ -1,2 +1,7 @@
   注解通过反射获取。首先可以通过 Class 对象的 isAnnotationPresent() 方法判断它是否应用了某个注解。
+  然后通过 getAnnotation() 方法来获取 Annotation 对象。
+  或者是 getAnnotations() 方法。
+  前一种方法返回指定类型的注解，后一种方法返回注解到这个元素上的所有注解。
+  属性、方法上的注解照样是可以的。同样还是要假手于反射。
+  
   
