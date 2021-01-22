@@ -1,0 +1,26 @@
+  任何实现java.beans.PropertyEditor接口的类都是属性编辑器。属性编辑器的主要功能就是将外部的设置值转换为JVM内部的对应类型，所以属性编辑器其实就是一个类型转换器。
+  PropertyEditor是JavaBean规范定义的接口，JavaBean规范中还有其他一些PropertyEditor配置的接口。
+JavaBean的编辑器
+  JavaBean规范通过java.beans.PropertyEditor定义了设置JavaBean属性的方法，通过BeanInfo描述了JavaBean哪些属性是可定制的，此外还描述了可定制属性与PropertyEditor的对应关系。
+  BeanInfo与JavaBean之间的对应关系，通过两者之间规范的命名确立，对应JavaBean的BeanInfo采用如下的命名规范：<Bean>BeanInfo。
+  JavaBean规范提供了一个管理默认属性编辑器的管理器：PropertyEditorManager，该管理器内保存着一些常见类型的属性编辑器，如果某个JavaBean的常见类型属性没有通过BeanInfo显式指定属性编辑器，
+IDE将自动使用PropertyEditorManager中注册的对应默认属性编辑器。
+PropertyEditor
+  PropertyEditor是属性编辑器的接口，它规定了将外部设置值转换为内部JavaBean属性值的转换接口方法。PropertyEditor主要的接口方法说明如下：
+    1.Object getValue()：返回属性的当前值。基本类型被封装成对应的封装类实例；
+    2. void setValue(Object newValue)：设置属性的值，基本类型以封装类传入
+    3. String getAsText()：将属性对象用一个字符串表示，以便外部的属性编辑器能以可视化的方式显示。缺省返回null，表示该属性不能以字符串表示；
+    4. void setAsText(String text)：用一个字符串去更新属性的内部值，这个字符串一般从外部属性编辑器传入；
+    5.String[] getTags()：返回表示有效属性值的字符串数组（如boolean属性对应的有效Tag为true和false），以便属性编辑器能以下拉框的方式显示出来。缺省返回null，表示属性没有匹配的字符值有限
+  集合；
+    6.String getJavaInitializationString()：为属性提供一个表示初始值的字符串，属性编辑器以此值作为属性的默认值。
+    Java为PropertyEditor提供了一个方便类：PropertyEditorSupport，该类实现了PropertyEditor接口并提供默认实现，一般情况下，用户可以通过扩展这个方便类设计自己的属性编辑器。
+  BeanInfo
+    BeanInfo主要描述了JavaBean哪些属性可以编辑以及对应的属性编辑器，每一个属性对应一个属性描述器PropertyDescriptor。
+    PropertyDescriptor的构造函数有两个入参：
+      1.PropertyDescriptor(String propertyName, Class beanClass) ，其中propertyName为属性名；而beanClass为JavaBean对应的Class。
+      2.setPropertyEditorClass(Class propertyEditorClass)，为JavaBean属性指定编辑器。
+    BeanInfo接口最重要的方法就是：PropertyDescriptor[] getPropertyDescriptors() ，该方法返回JavaBean的属性描述器数组。
+    BeanInfo接口有一个常用的实现类：SimpleBeanInfo，一般情况下，可以通过扩展SimpleBeanInfo实现自己的功能。
+    
+  
