@@ -1,0 +1,21 @@
+  1.约束的作用：xml的标签是自定义的，需要技术来规定xml中只能出现的元素，这个时候需要约束。
+  2.xml的约束的技术：DTD约束 和Schema约束。
+  3.DTD技术
+    创建一个文件，后缀名为“.dtd”
+    1.看xml中有几个元素，有几个元素，在dtd文件中写几个<!ELEMENT>
+    2. 判断元素是简单元素还是复杂元素。
+      复杂元素：有子元素的元素，如：<!ELEMENT 元素名称 (子元素)>
+      简单元素：没有子元素，如：<!ELEMENT 元素名称 (#PCDATA)>
+    3.需要在xml文件中引入dtd文件三种引入方式：
+      1.引入外部的dtd文件，如：<!DOCTYPE 根元素名称 SYSTEM “dtd文件的路径”>
+      2.使用内部的dtd文件，如
+        <!DOCTYPE rootName [
+          <! ELEMENT elementName(SonElementName)>
+          .....
+        ]>
+      3.使用外部的dtd文件（网络上的dtd文件）,如：<!DOCTYPE 根元素名称 PUBLIC "DTD名称" “DTD文件的URL”>
+    4.使用dtd定义元素
+      语法：<!ELEMENT 元素名 约束>，如：<!ELEMENT person (name+,age?,sex*,school)>
+    5.使用dtd定义属性
+      语法：
+    
