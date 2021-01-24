@@ -15,7 +15,10 @@
         ]>
       3.使用外部的dtd文件（网络上的dtd文件）,如：<!DOCTYPE 根元素名称 PUBLIC "DTD名称" “DTD文件的URL”>
     4.使用dtd定义元素
-      语法：<!ELEMENT 元素名 约束>，如：<!ELEMENT person (name+,age?,sex*,school)>
+      1.语法：<!ELEMENT 元素名 约束>，如：<!ELEMENT person (name+,age?,sex*,school)>
     5.使用dtd定义属性
-      语法：
+      1.语法：<!ATTLIST 元素名称 属性名称 属性类型 属性的约束 >
+      2.属性类型：CDATA：字符串；枚举：表示只能在一定范围内出现值，但是只能每次出现其中的一个：如,(aa|bb|cc);ID：值只能是字母或下划线开头。
+      3.属性的约束：#REQUIRED:属性必须存在；#IMPLIED：属性可有可无；#FIXED：表示一个固定值 ,如#FIXED "AAA"。
+      
     
