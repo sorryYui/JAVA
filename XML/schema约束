@@ -1,0 +1,13 @@
+1.在schema文件中，属性 xmlns="http://www.w3.org/2001/XMLSchema"
+2.targetNamespace-----使用schema约束文件，直接通过这个地址引入约束文件
+3.elementFormDefault="qualified"-----元素格式默认。
+4.复杂元素：
+  <complexType>
+　　<sequence>
+　　　　　　子元素
+　　</sequence>
+</complexType>
+complexType-----表示这是一个复杂元素；
+squence-----元素必须以squence中子元素地书写顺序出现。
+5.简单元素，写在复杂元素的子元素位置。
+.
